@@ -1,0 +1,97 @@
+<!-- Define o tipo de documento como HTML5 -->
+<!DOCTYPE html>
+
+<!-- Início do documento HTML com idioma definido como português do Brasil -->
+<html lang="pt-BR">
+
+<head>
+    <!-- Define a codificação de caracteres como UTF-8 (suporte a acentos e símbolos) -->
+    <meta charset="UTF-8">
+
+    <!-- Define a viewport para responsividade em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da aba do navegador -->
+    <title>Visibilidade dos Astros</title>
+
+    <!-- Importa o arquivo de estilos externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Contêiner principal da aplicação -->
+    <div class="app-container">
+
+        <!-- Cabeçalho do site -->
+        <header>
+            <!-- Título principal da página -->
+            <h1>Visibilidade dos Astros</h1>
+
+            <!-- Controles de data: hoje, anterior, próximo e seleção manual -->
+            <div id="date-controls">
+
+                <!-- Botão que retorna para o dia atual -->
+                <button id="today-btn" title="Ir para o dia de hoje">Hoje</button>
+
+                <!-- Botão para ir para o dia anterior -->
+                <button id="prev-day" title="Dia Anterior">&lt;</button>
+
+                <!-- Seção com inputs para selecionar dia, mês e ano manualmente -->
+                <div id="date-selector">
+
+                    <!-- Rótulo do campo "Dia" -->
+                    <label for="day-input">Dia:</label>
+
+                    <!-- Campo para inserir o número do dia -->
+                    <input type="number" id="day-input" value="1" min="1" max="31">
+
+                    <!-- Rótulo do campo "Mês" -->
+                    <label for="month-input">Mês:</label>
+
+                    <!-- Campo para inserir o número do mês -->
+                    <input type="number" id="month-input" value="8" min="1" max="12">
+
+                    <!-- Rótulo do campo "Ano" -->
+                    <label for="year-input">Ano:</label>
+
+                    <!-- Campo para inserir o número do ano -->
+                    <input type="number" id="year-input" value="2025" min="2000" max="2100">
+                </div>
+
+                <!-- Botão para ir para o dia seguinte -->
+                <button id="next-day" title="Próximo Dia">&gt;</button>
+            </div>
+
+            <!-- Informações sobre o nascer e pôr do sol -->
+            <div id="sun-info">
+                <!-- Local onde será exibido o horário do pôr do sol -->
+                <span id="sunset">Pôr do Sol: --:--</span>
+
+                <!-- Local onde será exibido o horário do nascer do sol -->
+                <span id="sunrise">Nascer do Sol: --:--</span>
+            </div>
+        </header>
+
+        <!-- Conteúdo principal da página: linha do tempo dos planetas -->
+        <main id="timeline-container">
+
+            <!-- Linha com os rótulos de horário no topo do gráfico -->
+            <div class="time-labels-row">
+
+                <!-- Espaço reservado para alinhar com os nomes dos planetas -->
+                <div class="planet-name-placeholder"></div>
+
+                <!-- Contêiner que receberá os rótulos das horas dinamicamente -->
+                <div class="time-labels-container" id="time-labels"></div>
+            </div>
+
+            <!-- Área onde será renderizado o gráfico das barras de visibilidade -->
+            <div id="chart"></div>
+        </main>
+    </div>
+
+    <!-- Importa o arquivo JavaScript que contém a lógica do aplicativo -->
+    <script src="script.js"></script>
+</body>
+
+</html>
