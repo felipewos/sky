@@ -233,3 +233,23 @@ h1 {
     white-space: nowrap;              /* Impede quebra de linha */
     pointer-events: none;             /* Não reage a cliques */
 }
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  #date-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #date-selector input[type="number"] {
+    width: 60px;
+  }
+  .planet-name {
+    flex-basis: 80px;
+    font-size: 0.85rem;
+  }
+  #chart {
+    overflow-x: auto; /* permite rolar o gráfico horizontalmente */
+  }
+}
+
