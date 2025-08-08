@@ -8,248 +8,264 @@
 
 /* Aplica estilo base a todos os elementos */
 * {
-    box-sizing: border-box;     /* Inclui padding e border dentro do tamanho total do elemento */
-    margin: 0;                  /* Remove margens padrão */
-    padding: 0;                 /* Remove paddings padrão */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Estiliza o corpo da página */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: var(--bg-color);   /* Cor de fundo do corpo */
-    color: var(--text-color);            /* Cor do texto principal */
-    display: flex;                       /* Usa Flexbox para centralização */
-    justify-content: center;            /* Centraliza o conteúdo horizontalmente */
-    padding: 20px;                       /* Espaço interno ao redor do conteúdo */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 /* Contêiner principal da aplicação */
 .app-container {
-    width: 100%;             /* Ocupa toda a largura disponível */
-    max-width: 900px;        /* Limita a largura máxima */
+    width: 100%;
+    max-width: 900px;
 }
 
-/* Cabeçalho da página */
+/* Cabeçalho */
 header {
-    margin-bottom: 20px;     /* Espaço abaixo do cabeçalho */
+    margin-bottom: 20px;
 }
 
-/* Título principal */
+/* Título */
 h1 {
-    font-size: 2.5rem;            /* Tamanho grande */
-    color: var(--text-color);    /* Cor do texto */
-    margin-bottom: 20px;         /* Espaçamento inferior */
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
 }
 
-/* Área com botões e inputs de data */
+/* Controles de data */
 #date-controls {
-    display: flex;               /* Organiza horizontalmente */
-    align-items: center;        /* Alinha verticalmente ao centro */
-    gap: 10px;                  /* Espaçamento entre elementos */
-    margin-bottom: 20px;        /* Espaço inferior */
-    flex-wrap: wrap;            /* Permite quebra de linha quando necessário */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
-/* Agrupamento dos inputs de dia/mês/ano */
 #date-selector {
-    display: flex;              /* Organiza em linha */
-    gap: 10px;                  /* Espaçamento entre elementos */
-    align-items: center;        /* Alinha verticalmente */
-    margin: 0 5px;              /* Margem horizontal */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 0 5px;
 }
 
-/* Rótulos dos inputs */
 #date-selector label {
-    color: var(--label-color);  /* Cor dos textos secundários */
+    color: var(--label-color);
 }
 
-/* Inputs numéricos (dia, mês, ano) */
 #date-selector input[type="number"] {
-    background-color: #1c2039;               /* Cor de fundo escura */
-    color: var(--text-color);                /* Cor do texto */
-    border: 1px solid var(--border-color);   /* Borda com cor definida */
-    border-radius: 4px;                      /* Bordas arredondadas */
-    padding: 5px 8px;                        /* Espaçamento interno */
-    width: 80px;                             /* Largura fixa */
-    font-size: 1rem;                         /* Tamanho da fonte */
+    background-color: #1c2039;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 5px 8px;
+    width: 80px;
+    font-size: 1rem;
 }
 
-/* Estilização base de todos os botões de controle de data */
+/* Botões */
 #date-controls button {
-    background-color: #3a3f5e;        /* Cor de fundo */
-    color: var(--text-color);         /* Cor do texto */
-    border: none;                     /* Remove borda */
-    height: 35px;                     /* Altura fixa */
-    font-size: 1.2rem;                /* Tamanho do texto */
-    cursor: pointer;                  /* Cursor de mão ao passar o mouse */
-    transition: background-color 0.2s;/* Suaviza a transição de cor */
-    display: flex;                    /* Usa Flexbox para centralizar conteúdo */
-    align-items: center;             /* Alinha verticalmente */
-    justify-content: center;         /* Alinha horizontalmente */
+    background-color: #3a3f5e;
+    color: var(--text-color);
+    border: none;
+    height: 35px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Cor de fundo ao passar o mouse sobre o botão */
 #date-controls button:hover {
     background-color: #4f5578;
 }
 
-/* Estilização específica dos botões anterior e próximo */
 #date-controls button#prev-day,
 #date-controls button#next-day {
-    width: 35px;                 /* Largura igual à altura para torná-los circulares */
-    border-radius: 50%;          /* Borda arredondada em círculo */
-    font-weight: bold;           /* Texto em negrito */
+    width: 35px;
+    border-radius: 50%;
+    font-weight: bold;
 }
 
-/* Estilização específica do botão "Hoje" */
 #date-controls button#today-btn {
-    width: auto;                 /* Largura baseada no conteúdo */
-    padding: 0 15px;             /* Espaço interno horizontal */
-    border-radius: 6px;          /* Bordas levemente arredondadas */
-    font-size: 0.9rem;           /* Tamanho de fonte menor */
-    order: -1;                   /* Move o botão para o início da linha */
+    width: auto;
+    padding: 0 15px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    order: -1;
 }
 
-/* Área com informações sobre o nascer e pôr do sol */
+/* Informações do sol */
 #sun-info {
-    display: flex;                              /* Alinha horizontalmente */
-    justify-content: space-between;            /* Espaça ao máximo os itens */
-    padding: 10px 0;                            /* Espaçamento vertical */
-    border-top: 1px solid var(--border-color);  /* Linha superior */
-    border-bottom: 1px solid var(--border-color);/* Linha inferior */
-    margin-bottom: 10px;                        /* Espaço abaixo da seção */
-    font-size: 0.9rem;                          /* Tamanho de fonte reduzido */
-    color: var(--label-color);                 /* Cor do texto secundário */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--label-color);
 }
 
-/* Contêiner da linha do tempo dos astros */
+/* Linha do tempo */
 #timeline-container {
-    position: relative;          /* Necessário para posicionar elementos filhos de forma absoluta */
+    position: relative;
 }
 
-/* Linha que contém os rótulos das horas */
 .time-labels-row {
-    display: flex;               /* Organiza em linha */
-    margin-bottom: 10px;         /* Espaçamento inferior */
+    display: flex;
+    margin-bottom: 10px;
 }
 
-/* Espaço reservado para alinhar os nomes dos planetas */
 .planet-name-placeholder {
-    flex-basis: 120px;           /* Largura fixa */
-    flex-shrink: 0;              /* Não permite encolher */
-    padding-right: 15px;         /* Espaço à direita */
+    flex-basis: 120px;
+    flex-shrink: 0;
+    padding-right: 15px;
 }
 
-/* Contêiner que segura os rótulos de hora */
 .time-labels-container {
-    flex-grow: 1;                /* Ocupa o espaço restante */
-    display: flex;               /* Organiza horizontalmente */
-    justify-content: space-between; /* Distribui os rótulos igualmente */
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 20px;
 }
 
-/* Rótulos de hora individuais */
 .time-labels-container span {
-    width: 0;                     /* Largura zero para centralizar com base no meio */
-    text-align: center;           /* Texto centralizado */
-    color: var(--label-color);    /* Cor do texto */
-    transform: translateX(-50%);  /* Corrige o alinhamento horizontal para o centro */
+    width: 0;
+    text-align: center;
+    color: var(--label-color);
+    transform: translateX(-50%);
 }
 
-/* Área do gráfico que mostra visibilidade dos planetas */
+/* Gráfico */
 #chart {
-    position: relative;          /* Contêiner com posição relativa */
-    background-color: #1c2039;   /* Cor de fundo escura */
-    border-radius: 8px;          /* Bordas arredondadas */
-    padding: 10px 0;             /* Espaçamento interno vertical */
-    overflow: hidden;            /* Esconde conteúdo que transborda */
+    position: relative;
+    background-color: #1c2039;
+    border-radius: 8px;
+    padding: 10px 0;
+    overflow: hidden;
 }
 
-/* Cada linha de planeta dentro do gráfico */
 .planet-row {
-    display: flex;               /* Organiza nome e barra lado a lado */
-    align-items: center;         /* Alinha verticalmente */
-    height: 45px;                /* Altura da linha */
-    padding: 5px 0;              /* Espaçamento vertical */
+    display: flex;
+    align-items: center;
+    height: 45px;
+    padding: 5px 0;
 }
 
-/* Nome do planeta à esquerda */
 .planet-name {
-    flex-basis: 120px;           /* Largura fixa */
-    flex-shrink: 0;              /* Não permite encolher */
-    text-align: right;           /* Alinha texto à direita */
-    padding-right: 15px;         /* Espaço à direita */
-    font-size: 1rem;             /* Tamanho do texto */
+    flex-basis: 120px;
+    flex-shrink: 0;
+    text-align: right;
+    padding-right: 15px;
+    font-size: 1rem;
 }
 
-/* Contêiner para a barra de visibilidade */
 .bar-container {
-    flex-grow: 1;                /* Ocupa todo o espaço restante da linha */
-    height: 100%;                /* Altura total da linha */
-    position: relative;          /* Necessário para posicionar a barra dentro */
+    flex-grow: 1;
+    height: 100%;
+    position: relative;
 }
 
-/* Barra que representa o tempo de visibilidade */
 .visibility-bar {
-    position: absolute;          /* Posicionamento absoluto dentro da bar-container */
-    top: 0;                      /* Começa no topo */
-    height: 100%;                /* Ocupa toda a altura da linha */
-    border-radius: 4px;          /* Bordas arredondadas */
-    overflow: hidden;            /* Esconde qualquer conteúdo que extrapole */
-    display: flex;               /* Permite alinhar conteúdo interno (texto) */
-    justify-content: space-between; /* Distribui o conteúdo interno */
-    align-items: center;       /* Alinha o texto ao fundo da barra */
-    color: #111;                 /* Cor escura do texto interno */
-    font-weight: 500;            /* Peso da fonte médio */
-    font-size: 0.75rem;          /* Tamanho pequeno */
-    padding: 0 5px 3px 5px;      /* Espaçamento interno com foco no fundo */
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #111;
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 0 5px 3px 5px;
+    transition: left 0.3s ease, width 0.3s ease;
 }
 
-/* Linha vertical usada para marcar uma hora específica */
 .hour-line {
-    position: absolute;                /* Posicionamento absoluto no gráfico */
-    top: 0;                            /* Começa no topo */
-    bottom: 0;                         /* Vai até a base */
-    width: 1px;                        /* Linha fina */
-    background-color: var(--border-color); /* Cor definida via variável */
-    opacity: 0.5;                      /* Transparência */
-    pointer-events: none;             /* Ignora cliques e interações */
-    z-index: 0;                        /* Fica atrás de outros elementos */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--border-color);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
 }
 
-/* Reforça altura e posicionamento do contêiner dos rótulos */
-.time-labels-container {
-    flex-grow: 1;                      /* Ocupa espaço restante */
-    position: relative;               /* Permite posicionar rótulos com absolute */
-    height: 20px;                     /* Altura da faixa de rótulos */
-}
-
-/* Rótulo de hora com texto */
 .hour-label {
-    position: absolute;               /* Posicionamento em relação ao pai */
-    transform: translateX(-50%);      /* Centraliza horizontalmente */
-    font-size: 0.8rem;                /* Tamanho da fonte pequeno */
-    color: var(--label-color);        /* Cor de texto secundária */
-    bottom: 0;                        /* Alinhado ao fundo */
-    white-space: nowrap;              /* Impede quebra de linha */
-    pointer-events: none;             /* Não reage a cliques */
-}
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.6rem;
-  }
-  #date-controls {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  #date-selector input[type="number"] {
-    width: 60px;
-  }
-  .planet-name {
-    flex-basis: 80px;
-    font-size: 0.85rem;
-  }
-  #chart {
-    overflow-x: auto; /* permite rolar o gráfico horizontalmente */
-  }
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: var(--label-color);
+    bottom: 0;
+    white-space: nowrap;
+    pointer-events: none;
 }
 
+/* ===== Responsividade ===== */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    #date-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    #date-selector input[type="number"] {
+        width: 60px;
+        padding: 4px 6px;
+        font-size: 0.9rem;
+    }
+
+    #date-selector label {
+        font-size: 0.85rem;
+    }
+
+    #date-controls button {
+        height: 40px;
+        font-size: 1rem;
+        padding: 0 12px;
+    }
+
+    #date-controls button#prev-day,
+    #date-controls button#next-day {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    #sun-info {
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+    }
+
+    .planet-name {
+        flex-basis: 80px;
+        font-size: 0.85rem;
+    }
+
+    #chart {
+        overflow-x: auto;
+    }
+
+    .hour-label {
+        font-size: 0.7rem;
+    }
+}
